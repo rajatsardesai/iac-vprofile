@@ -4,7 +4,6 @@ module "vpc" {
 
   project_id   = var.project_id
   network_name = "vprofile-gke"
-  network_ip   = "172.20.0.0/16"
 
   subnets = [
     {
