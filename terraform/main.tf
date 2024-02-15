@@ -1,13 +1,10 @@
 provider "kubernetes" {
-  host                   = module.eks.cluster_endpoint
-  cluster_ca_certificate = base64decode(module.eks.cluster_certificate_authority_data)
+  host                   = module.gke.endpoint
+  token                  = data.google_client_config.default.access_token
+  cluster_ca_certificate = base64decode(module.gke.ca_certificate)
 }
 
-provider "aws" {
-  region = var.region
-}
-
-data "aws_availability_zones" "available" {}
+data "google_client_config" "default" {}
 
 locals {
   cluster_name = var.clusterName
