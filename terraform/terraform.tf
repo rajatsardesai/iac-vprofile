@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     google = {
-      source = "hashicorp/google"
+      source  = "hashicorp/google"
       version = "~> 5.16.0"
     }
 
@@ -28,7 +28,7 @@ terraform {
 
   backend "gcs" {
     bucket = "vprofileactions"
-    prefix  = "terraform/state"
+    prefix = "terraform/state"
   }
 
   required_version = "~> 1.6.3"
