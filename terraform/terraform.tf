@@ -1,8 +1,8 @@
 terraform {
   required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.25.0"
+    google = {
+      source = "hashicorp/google"
+      version = "~> 5.16.0"
     }
 
     random = {
@@ -27,9 +27,9 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "gitopsterrastate"
+    bucket = "vprofileactions"
     key    = "terraform.tfstate"
-    region = "us-east-2"
+    region = "us-central1"
   }
 
   required_version = "~> 1.6.3"
