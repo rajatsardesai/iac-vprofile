@@ -26,10 +26,9 @@ terraform {
     }
   }
 
-  backend "s3" {
+  backend "gcs" {
     bucket = "vprofileactions"
-    key    = "terraform.tfstate"
-    region = "us-central1"
+    prefix  = "terraform/state"
   }
 
   required_version = "~> 1.6.3"
