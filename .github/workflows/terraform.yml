@@ -67,7 +67,7 @@ jobs:
       - name: Terraform apply
         id: apply
         if: github.ref == 'refs/heads/main' && github.event.name == 'push'
-        run: terraform apply -auto-approve -input=false -parallelism=1 planfile
+        run: terraform apply -input=false planfile
 
       - name: Set up Google Cloud SDK
         uses: google-github-actions/setup-gcloud@v2
