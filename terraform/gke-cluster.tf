@@ -6,12 +6,8 @@ module "gke" {
   region     = var.region
   network    = module.vpc.network_name
   subnetwork = "public-subnet-1"
-  ip_range_pods = {
-    for range in secondary_ranges.subnet-pods : range.range_name => range.ip_cidr_range
-  }
-  ip_range_services = {
-    for range in secondary_ranges.subnet-services : range.range_name => range.ip_cidr_range
-  }
+  ip_range_pods = "subnet-secondary-pods"
+  ip_range_services = "subnet-secondary-services"
   initial_node_count = 2
 
   node_pools = [
