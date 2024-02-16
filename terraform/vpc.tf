@@ -51,7 +51,7 @@ module "vpc" {
   ]
 
   secondary_ranges = {
-    public-secondary-subnet-1 = [
+    public-subnet-1 = [
       {
         range_name    = "pods-range"
         ip_cidr_range = "172.20.0.0/24"
