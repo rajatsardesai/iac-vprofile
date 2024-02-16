@@ -5,7 +5,7 @@ module "gke" {
   name               = local.cluster_name
   region             = var.region
   network            = module.vpc.network_name
-  subnetwork         = module.vpc.subnets
+  subnetwork         = module.vpc.subnets[0].subnet_name
   ip_range_pods      = "172.20.0.0/16"
   ip_range_services  = "172.20.7.0/26"
   initial_node_count = 2
