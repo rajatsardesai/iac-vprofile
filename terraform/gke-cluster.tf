@@ -17,6 +17,7 @@ module "gke" {
       initial_node_count = 2
       min_count          = 1
       max_count          = 3
+      disk_type          = "pd-standard"
       disk_size_gb       = 100
     },
     {
@@ -25,6 +26,7 @@ module "gke" {
       initial_node_count = 1
       min_count          = 1
       max_count          = 2
+      disk_type          = "pd-standard"
       disk_size_gb       = 100
     }
   ]
