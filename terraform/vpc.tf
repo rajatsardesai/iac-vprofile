@@ -49,4 +49,17 @@ module "vpc" {
       subnet_flow_logs      = false
     }
   ]
+
+  secondary_ranges = {
+    public-secondary-subnet-1 = [
+      {
+        range_name    = "pods-range"
+        ip_cidr_range = "172.20.0.0/24"
+      },
+      {
+        range_name    = "services-range"
+        ip_cidr_range = "172.20.7.0/24"
+      }
+    ]
+  }
 }
