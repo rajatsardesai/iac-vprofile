@@ -4,10 +4,10 @@ module "gke" {
 
   name               = local.cluster_name
   region             = var.region
-  network            = google_compute_network.main.self_link
-  subnetwork         = google_compute_subnetwork.private.self_link
-  ip_range_pods      = "172.20.0.0/16"
-  ip_range_services  = "172.20.7.0/26"
+  network            = module.vpc.network_name
+  subnetwork         = module.vpc.subnet_name
+  ip_range_pods      = module.vpc.subnet_ip_range_pods
+  ip_range_services  = module.vpc.subnet_ip_range_services
   initial_node_count = 2
 
   node_pools = [
