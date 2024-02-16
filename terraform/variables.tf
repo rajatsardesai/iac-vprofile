@@ -10,12 +10,6 @@ variable "region" {
   default     = "us-central1"
 }
 
-variable "zone" {
-  description = "GCP zone"
-  type        = string
-  default     = ["us-central1-b"]
-}
-
 variable "clusterName" {
   description = "Name of the kubernetes engine cluster"
   type        = string
