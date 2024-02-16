@@ -1,7 +1,7 @@
 variable "project_id" {
   description = "GCP Project id"
   type        = string
-  default     = "gitops-414406"
+  default     = "gitops-414517"
 }
 
 variable "region" {
@@ -13,7 +13,7 @@ variable "region" {
 variable "clusterName" {
   description = "Name of the kubernetes engine cluster"
   type        = string
-  default     = "vpro-gke"
+  default     = "vprofile-gke"
 }
 
 variable "ip_range_pods" {
