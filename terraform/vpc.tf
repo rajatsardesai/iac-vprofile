@@ -1,26 +1,52 @@
 module "vpc" {
-  source  = "terraform-aws-modules/vpc/aws"
-  version = "5.1.2"
+  source  = "terraform-google-modules/network/google"
+  version = "~> 9.0"
 
-  name = "vprofile-eks"
+  project_id   = var.project_id
+  network_name = "vprofile-gke"
 
-  cidr = "172.20.0.0/16"
-  azs  = slice(data.aws_availability_zones.available.names, 0, 3)
-
-  private_subnets = ["172.20.1.0/24", "172.20.2.0/24", "172.20.3.0/24"]
-  public_subnets  = ["172.20.4.0/24", "172.20.5.0/24", "172.20.6.0/24"]
-
-  enable_nat_gateway   = true
-  single_nat_gateway   = true
-  enable_dns_hostnames = true
-
-  public_subnet_tags = {
-    "kubernetes.io/cluster/${local.cluster_name}" = "shared"
-    "kubernetes.io/role/elb"                      = 1
-  }
-
-  private_subnet_tags = {
-    "kubernetes.io/cluster/${local.cluster_name}" = "shared"
-    "kubernetes.io/role/internal-elb"             = 1
-  }
+  subnets = [
+    {
+      subnet_name           = "public-subnet-1"
+      subnet_ip             = "172.20.4.0/24"
+      subnet_region         = var.region
+      subnet_private_access = false
+      subnet_flow_logs      = false
+    },
+    {
+      subnet_name           = "public-subnet-2"
+      subnet_ip             = "172.20.5.0/24"
+      subnet_region         = var.region
+      subnet_private_access = false
+      subnet_flow_logs      = false
+    },
+    {
+      subnet_name           = "public-subnet-3"
+      subnet_ip             = "172.20.6.0/24"
+      subnet_region         = var.region
+      subnet_private_access = false
+      subnet_flow_logs      = false
+    },
+    {
+      subnet_name           = "private-subnet-1"
+      subnet_ip             = "172.20.1.0/24"
+      subnet_region         = var.region
+      subnet_private_access = true
+      subnet_flow_logs      = false
+    },
+    {
+      subnet_name           = "private-subnet-2"
+      subnet_ip             = "172.20.2.0/24"
+      subnet_region         = var.region
+      subnet_private_access = true
+      subnet_flow_logs      = false
+    },
+    {
+      subnet_name           = "private-subnet-3"
+      subnet_ip             = "172.20.3.0/24"
+      subnet_region         = var.region
+      subnet_private_access = true
+      subnet_flow_logs      = false
+    }
+  ]
 }

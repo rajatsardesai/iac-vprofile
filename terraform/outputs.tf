@@ -1,20 +1,15 @@
 output "cluster_name" {
-  description = "Amazon Web Service EKS Cluster Name"
-  value       = module.eks.cluster_name
+  description = "Google Kubernetes Engine GKE Cluster Name"
+  value       = module.gke.name
 }
 
 output "cluster_endpoint" {
-  description = "Endpoint for Amazon Web Service EKS "
-  value       = module.eks.cluster_endpoint
+  description = "Endpoint for Google Kubernetes Engine GKE "
+  value       = module.gke.endpoint
+  sensitive   = true
 }
 
 output "region" {
-  description = "Amazon Web Service EKS Cluster region"
+  description = "Google Kubernetes Engine GKE region"
   value       = var.region
-}
-
-
-output "cluster_security_group_id" {
-  description = "Security group ID for the Amazon Web Service EKS Cluster "
-  value       = module.eks.cluster_security_group_id
 }
