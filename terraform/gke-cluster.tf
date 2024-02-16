@@ -5,9 +5,9 @@ module "gke" {
   name               = local.cluster_name
   region             = var.region
   network            = module.vpc.network_name
-  subnetwork         = module.vpc.subnets.public-subnet-1.subnet_name
-  ip_range_pods      = "us-central1-01-gke-01-pods"
-  ip_range_services  = "us-central1-01-gke-01-services"
+  subnetwork         = module.vpc.google_compute_subnetwork
+  ip_range_pods      = "172.20.0.0/16"
+  ip_range_services  = "172.20.7.0/26"
   initial_node_count = 2
 
   node_pools = [
