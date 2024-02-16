@@ -3,7 +3,7 @@ module "gke" {
   project_id = var.project_id
 
   name               = local.cluster_name
-  region             = var.region
+  region             = var.zone
   network            = module.vpc.network_name
   subnetwork         = "public-subnet-1"
   ip_range_pods      = var.ip_range_pods
@@ -19,7 +19,7 @@ module "gke" {
       max_count          = 3
       disk_type          = "pd-standard"
       disk_size_gb       = 10
-      node_locations     = "us-central1-b"
+      node_locations     = var.zone
     },
     {
       name               = "node-pool-2"
@@ -29,7 +29,7 @@ module "gke" {
       max_count          = 2
       disk_type          = "pd-standard"
       disk_size_gb       = 10
-      node_locations     = "us-central1-b"
+      node_locations     = var.zone
     }
   ]
 }
