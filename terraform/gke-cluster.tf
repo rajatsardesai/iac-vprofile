@@ -6,7 +6,7 @@ module "gke" {
   region             = var.region
   zones              = ["us-central1-b"]
   network            = module.vpc.network_name
-  subnetwork         = "public-subnet-1"
+  subnetwork         = "public-subnet-2"
   ip_range_pods      = var.ip_range_pods
   ip_range_services  = var.ip_range_services
   initial_node_count = 2
