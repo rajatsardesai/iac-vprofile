@@ -19,7 +19,7 @@ variable "clusterName" {
 variable "ip_range_pods" {
   description = "IP address assigned to pods within the Kubernetes cluster"
   type        = string
-  default     = "172.20.4.0/24"
+  default     = "172.20.0.0/24"
 }
 
 variable "ip_range_services" {
