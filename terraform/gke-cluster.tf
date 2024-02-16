@@ -6,7 +6,7 @@ module "gke" {
   region  = var.region
   network = module.vpc.network_name
   subnetwork = {
-    for subnet in module.vpc.subnets : "${subnet.subnet_region}/${subnet.subnet_name}" => subnet.subnet_name
+    for subnet in module.vpc.subnets : "${subnet.subnet_name}" => subnet.subnet_name
   }
   ip_range_pods      = "172.20.0.0/16"
   ip_range_services  = "172.20.7.0/26"
