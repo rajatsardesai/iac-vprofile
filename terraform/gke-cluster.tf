@@ -3,7 +3,8 @@ module "gke" {
   project_id = var.project_id
 
   name               = local.cluster_name
-  region             = var.zone
+  region             = var.region
+  zones              = var.zone
   network            = module.vpc.network_name
   subnetwork         = "public-subnet-1"
   ip_range_pods      = var.ip_range_pods
