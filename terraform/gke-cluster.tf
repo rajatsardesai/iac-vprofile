@@ -4,6 +4,7 @@ module "gke" {
 
   name               = local.cluster_name
   region             = var.region
+  zones              = ["us-central1-b"]
   network            = module.vpc.network_name
   subnetwork         = "public-subnet-1"
   ip_range_pods      = var.ip_range_pods
