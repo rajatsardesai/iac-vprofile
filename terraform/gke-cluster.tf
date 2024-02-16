@@ -2,12 +2,12 @@ module "gke" {
   source     = "terraform-google-modules/kubernetes-engine/google"
   project_id = var.project_id
 
-  name       = local.cluster_name
-  region     = var.region
-  network    = module.vpc.network_name
-  subnetwork = "public-subnet-1"
-  ip_range_pods = "subnet-secondary-pods"
-  ip_range_services = "subnet-secondary-services"
+  name               = local.cluster_name
+  region             = var.region
+  network            = module.vpc.network_name
+  subnetwork         = "public-subnet-1"
+  ip_range_pods      = "subnet-secondary-pods"
+  ip_range_services  = "subnet-secondary-services"
   initial_node_count = 2
 
   node_pools = [
