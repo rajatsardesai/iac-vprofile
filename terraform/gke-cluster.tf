@@ -19,7 +19,7 @@ module "gke" {
       max_count          = 3
       disk_type          = "pd-standard"
       disk_size_gb       = 10
-      node_locations     = "us-central1-b,us-central1-c"
+      node_locations     = "us-central1-b"
     },
     {
       name               = "node-pool-2"
@@ -29,7 +29,7 @@ module "gke" {
       max_count          = 2
       disk_type          = "pd-standard"
       disk_size_gb       = 10
-      node_locations     = "us-central1-b,us-central1-c"
+      node_locations     = "us-central1-b"
     }
   ]
 }
