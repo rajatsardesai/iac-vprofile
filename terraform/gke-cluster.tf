@@ -2,10 +2,10 @@ module "gke" {
   source     = "terraform-google-modules/kubernetes-engine/google"
   project_id = var.project_id
 
-  name               = local.cluster_name
-  region             = var.region
-  network            = module.vpc.network_name
-  subnetwork         = {
+  name    = local.cluster_name
+  region  = var.region
+  network = module.vpc.network_name
+  subnetwork = {
     for subnet in module.vpc.subnets : "${subnet.subnet_region}/${subnet.subnet_name}" => subnet.subnet_name
   }
   ip_range_pods      = "172.20.0.0/16"
