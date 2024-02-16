@@ -18,7 +18,7 @@ module "gke" {
       min_count          = 1
       max_count          = 3
       disk_type          = "pd-standard"
-      disk_size_gb       = 100
+      disk_size_gb       = 10
     },
     {
       name               = "node-pool-2"
@@ -27,7 +27,7 @@ module "gke" {
       min_count          = 1
       max_count          = 2
       disk_type          = "pd-standard"
-      disk_size_gb       = 100
+      disk_size_gb       = 10
     }
   ]
 }
