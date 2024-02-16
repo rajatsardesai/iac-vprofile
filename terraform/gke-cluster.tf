@@ -10,7 +10,6 @@ module "gke" {
   ip_range_pods       = var.ip_range_pods
   ip_range_services   = var.ip_range_services
   initial_node_count  = 2
-  deletion_protection = true
 
   node_pools = [
     {
