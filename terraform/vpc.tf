@@ -28,7 +28,7 @@ module "vpc" {
       subnet_flow_logs      = false
     },
     {
-      subnet_name           = "public-subnet-3"
+      subnet_name           = "public-subnet-4"
       subnet_ip             = "172.20.8.0/24"
       subnet_region         = var.region
       subnet_private_access = false
@@ -54,9 +54,9 @@ module "vpc" {
       subnet_region         = var.region
       subnet_private_access = true
       subnet_flow_logs      = false
-    }
+    },
     {
-      subnet_name           = "private-subnet-3"
+      subnet_name           = "private-subnet-4"
       subnet_ip             = "172.20.9.0/24"
       subnet_region         = var.region
       subnet_private_access = true
