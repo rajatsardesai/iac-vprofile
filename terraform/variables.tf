@@ -13,7 +13,7 @@ variable "region" {
 variable "clusterName" {
   description = "Name of the kubernetes engine cluster"
   type        = string
-  default     = "vprofile-gke"
+  default     = "vpro-gke"
 }
 
 variable "ip_range_pods" {
