@@ -17,7 +17,7 @@ module "gke" {
       initial_node_count = 2
       min_count          = 1
       max_count          = 3
-      disk_size_gb       = 500
+      disk_size_gb       = 100
     },
     {
       name               = "node-pool-2"
@@ -25,7 +25,7 @@ module "gke" {
       initial_node_count = 1
       min_count          = 1
       max_count          = 2
-      disk_size_gb       = 500
+      disk_size_gb       = 100
     }
   ]
 }
