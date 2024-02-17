@@ -11,6 +11,12 @@ module "gke" {
   ip_range_services  = var.ip_range_services
   initial_node_count = 2
 
+  cluster_autoscaling = [
+    {
+      disk_size = 10
+    }
+  ]
+
   node_pools = [
     {
       name               = "node-pool-1"
@@ -18,7 +24,6 @@ module "gke" {
       initial_node_count = 2
       min_count          = 1
       max_count          = 3
-      disk_type          = "pd-standard"
       disk_size_gb       = 10
       node_locations     = "us-central1-b"
     },
@@ -28,7 +33,6 @@ module "gke" {
       initial_node_count = 1
       min_count          = 1
       max_count          = 2
-      disk_type          = "pd-standard"
       disk_size_gb       = 10
       node_locations     = "us-central1-b"
     }
