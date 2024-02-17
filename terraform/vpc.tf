@@ -8,42 +8,42 @@ module "vpc" {
   subnets = [
     {
       subnet_name           = "public-subnet-1"
-      subnet_ip             = "172.20.4.0/24"
+      subnet_ip             = "172.16.2.0/12"
       subnet_region         = var.region
       subnet_private_access = false
       subnet_flow_logs      = false
     },
     {
       subnet_name           = "public-subnet-2"
-      subnet_ip             = "172.20.5.0/24"
+      subnet_ip             = "172.16.3.0/12"
       subnet_region         = var.region
       subnet_private_access = false
       subnet_flow_logs      = false
     },
     {
       subnet_name           = "public-subnet-3"
-      subnet_ip             = "172.20.6.0/24"
+      subnet_ip             = "172.16.4.0/12"
       subnet_region         = var.region
       subnet_private_access = false
       subnet_flow_logs      = false
     },
     {
       subnet_name           = "private-subnet-1"
-      subnet_ip             = "172.20.1.0/24"
+      subnet_ip             = "172.16.5.0/12"
       subnet_region         = var.region
       subnet_private_access = true
       subnet_flow_logs      = false
     },
     {
       subnet_name           = "private-subnet-2"
-      subnet_ip             = "172.20.2.0/24"
+      subnet_ip             = "172.16.6.0/12"
       subnet_region         = var.region
       subnet_private_access = true
       subnet_flow_logs      = false
     },
     {
       subnet_name           = "private-subnet-3"
-      subnet_ip             = "172.20.3.0/24"
+      subnet_ip             = "172.16.7.0/12"
       subnet_region         = var.region
       subnet_private_access = true
       subnet_flow_logs      = false
@@ -54,31 +54,11 @@ module "vpc" {
     public-subnet-1 = [
       {
         range_name    = "pods-range"
-        ip_cidr_range = "172.20.11.0/24"
+        ip_cidr_range = "172.16.0.0/12"
       },
       {
         range_name    = "services-range"
-        ip_cidr_range = "172.20.34.0/24"
-      }
-    ]
-    public-subnet-2 = [
-      {
-        range_name    = "pods-range"
-        ip_cidr_range = "172.20.12.0/24"
-      },
-      {
-        range_name    = "services-range"
-        ip_cidr_range = "172.20.35.0/24"
-      }
-    ]
-    private-subnet-1 = [
-      {
-        range_name    = "pods-range"
-        ip_cidr_range = "172.20.13.0/24"
-      },
-      {
-        range_name    = "services-range"
-        ip_cidr_range = "172.20.36.0/24"
+        ip_cidr_range = "172.20.1.0/24"
       }
     ]
   }
