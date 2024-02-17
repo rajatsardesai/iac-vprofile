@@ -10,6 +10,7 @@ module "gke" {
   ip_range_pods      = var.ip_range_pods
   ip_range_services  = var.ip_range_services
   initial_node_count = 2
+  default_max_pods_per_node = 55
 
   deletion_protection = false
 
