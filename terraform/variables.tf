@@ -1,7 +1,7 @@
 variable "project_id" {
   description = "GCP Project id"
   type        = string
-  default     = "gitops-414517"
+  default     = "quantum-theme-414601"
 }
 
 variable "region" {
