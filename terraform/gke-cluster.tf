@@ -11,6 +11,9 @@ module "gke" {
   ip_range_services  = var.ip_range_services
   initial_node_count = 2
 
+  enable_node_autoprovisioning = true
+  deletion_protection = false
+
   node_pools = [
     {
       name               = "node-pool-1"
