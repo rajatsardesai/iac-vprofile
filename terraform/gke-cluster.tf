@@ -12,7 +12,7 @@ module "gke" {
   initial_node_count = 2
 
   enable_node_autoprovisioning = true
-  deletion_protection = false
+  deletion_protection          = false
 
   node_pools = [
     {
