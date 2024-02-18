@@ -1,5 +1,5 @@
 provider "kubernetes" {
-  host                   = module.gke.endpoint
+  host                   = "https://${module.gke.endpoint}"
   token                  = data.google_client_config.default.access_token
   cluster_ca_certificate = base64decode(module.gke.ca_certificate)
 }
@@ -16,7 +16,7 @@ resource "google_compute_network" "router" {
 
 resource "google_compute_router_nat" "nat_manual" {
   name   = "vprofile-gke-nat"
-  router = "vprofile-gke-router"
+  router = google_compute_network.router.name
   region = var.region
 
   nat_ip_allocate_option = "AUTO_ONLY"
