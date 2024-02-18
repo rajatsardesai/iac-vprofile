@@ -11,8 +11,7 @@ locals {
 }
 
 resource "google_compute_network" "router" {
-  name                    = "vprofile-gke-router"
-  auto_create_subnetworks = false
+  name = "vprofile-gke-router"
 }
 
 resource "google_compute_router_nat" "nat_manual" {
