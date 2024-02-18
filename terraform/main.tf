@@ -11,7 +11,8 @@ locals {
 }
 
 resource "google_compute_network" "router" {
-  name = "vprofile-gke-router"
+  name   = "vprofile-gke-router"
+  region = var.region
 }
 
 resource "google_compute_router_nat" "nat_manual" {
