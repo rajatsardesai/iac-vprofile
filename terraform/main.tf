@@ -22,7 +22,7 @@ resource "google_compute_router" "router" {
 
 resource "google_compute_router_nat" "nat_manual" {
   name   = "vprofile-gke-nat"
-  router = google_compute_network.router.name
+  router = google_compute_router.router.name
   region = var.region
 
   nat_ip_allocate_option = "AUTO_ONLY"
