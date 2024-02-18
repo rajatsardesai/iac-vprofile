@@ -22,7 +22,7 @@ module "gke" {
       min_count          = 1
       max_count          = 3
       disk_type          = "pd-standard"
-      disk_size_gb       = 10
+      disk_size_gb       = 50
       node_locations     = "us-central1-b"
     },
     {
@@ -32,7 +32,7 @@ module "gke" {
       min_count          = 1
       max_count          = 2
       disk_type          = "pd-standard"
-      disk_size_gb       = 10
+      disk_size_gb       = 50
       node_locations     = "us-central1-b"
     }
   ]
