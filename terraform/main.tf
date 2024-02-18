@@ -11,9 +11,9 @@ locals {
 }
 
 resource "google_compute_router_nat" "nat_manual" {
-  name    = "vprofile-gke-nat"
-  router  = "vprofile-gke-router"
-  region  = var.region
+  name   = "vprofile-gke-nat"
+  router = "vprofile-gke-router"
+  region = var.region
 
   nat_ip_allocate_option = "AUTO_ONLY"
 
