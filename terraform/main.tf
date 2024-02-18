@@ -11,8 +11,8 @@ locals {
 }
 
 resource "google_compute_router" "router" {
-  name    = "vprofile-gke-router"
-  region  = var.region
+  name   = "vprofile-gke-router"
+  region = var.region
 
   bgp {
     asn = 64514
