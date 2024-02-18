@@ -12,7 +12,6 @@ locals {
 
 resource "google_compute_network" "router" {
   name    = "vprofile-gke-router"
-  network = google_compute_network.network.name
 }
 
 resource "google_compute_network" "network" {
