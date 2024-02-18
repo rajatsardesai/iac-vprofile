@@ -17,7 +17,7 @@ resource "google_compute_router_nat" "nat_manual" {
 
   nat_ip_allocate_option = "AUTO_ONLY"
 
-  source_subnetwork_ip_ranges_to_nat = "public-subnet-2"
+  source_subnetwork_ip_ranges_to_nat = "LIST_OF_SUBNETWORKS"
   subnetwork {
     name                    = "public-subnet-2"
     source_ip_ranges_to_nat = ["172.16.2.0/24"]
