@@ -10,6 +10,12 @@ locals {
   cluster_name = var.clusterName
 }
 
+resource "google_compute_network" "router" {
+  name                    = "vprofile-gke-router"
+  auto_create_subnetworks = false
+  region = var.region
+}
+
 resource "google_compute_router_nat" "nat_manual" {
   name   = "vprofile-gke-nat"
   router = "vprofile-gke-router"
