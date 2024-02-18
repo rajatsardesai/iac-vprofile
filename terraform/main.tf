@@ -18,6 +18,7 @@ resource "google_compute_network" "network" {
 resource "google_compute_router" "router" {
   name    = "vprofile-gke-router"
   network = google_compute_network.network.name
+  region  = var.region
 }
 
 resource "google_compute_router_nat" "nat_manual" {
