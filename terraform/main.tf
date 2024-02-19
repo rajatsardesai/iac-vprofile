@@ -33,7 +33,7 @@ resource "google_compute_router_nat" "nat_manual" {
 
 resource "google_dns_managed_zone" "vprofile-gke-dns" {
   name        = "vprofile-gke-dns"
-  dns_name    = "vprofile-app.rrsinfo.xyz."
+  dns_name    = "rrsinfo.xyz."
   description = "Vprofile DNS zone"
 }
 
